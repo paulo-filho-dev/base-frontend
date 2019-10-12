@@ -24,7 +24,7 @@ gulp.task("styles", styles);
 gulp.task("scripts", scripts);
 gulp.task("watch", () => { 
     gulp.watch("./assets/img/*", images);
-    gulp.watch("./assets/sass/*", styles);
+    gulp.watch("./assets/scss/**/*.scss", styles);
     gulp.watch("./assets/js/*.js", scripts);
     gulp.watch("./public/**/*",  browserSyncReload);
 });
@@ -55,7 +55,7 @@ function images() {
 }
 
 function styles(){
-    return gulp.src("./assets/sass/*")
+    return gulp.src("./assets/scss/*")
                 .pipe(plumber())
                 .pipe(sass())
                 //Minificacao
